@@ -46,8 +46,8 @@ export default {
 
 <style scoped>
 .main-page-section {
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 85px;
+  padding-bottom: 85px;
 }
 .row {
   display: -webkit-box;
