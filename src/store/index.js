@@ -46,7 +46,8 @@ const store = new Vuex.Store({
       if(creds.username === 'admin' && creds.password === 'admin') {
         return new Promise(resolve => {
           setTimeout(() => {
-            localStorage.setItem("token", "JWT");
+            const uuidv4 = require('uuid/v4');
+            localStorage.setItem("token", uuidv4());
             commit(LOGIN_SUCCESS, creds.username);
             resolve();
           }, 1000);
