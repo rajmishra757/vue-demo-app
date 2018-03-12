@@ -1,7 +1,8 @@
 <template>
   <div>
     <div id='main-page' class='container-fluid'>
-      <div class='row content'>
+      <spinner v-if='$store.getters.pending'/>
+      <div class='row content' v-if='!$store.getters.pending'>
           <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12
             bg-left text-center main-page-section'>
               <img src='../assets/vue.jpg'
@@ -48,6 +49,7 @@
 <script>
 import Alert from './Alert';
 import FooterSection from './FooterSection';
+import Spinner from './Spinner';
 
 export default {
   name: "MainPage",
@@ -61,6 +63,7 @@ export default {
   components: {
     'alert': Alert,
     'footer-section': FooterSection,
+    'spinner': Spinner,
   },
   methods: {
     login: function () {

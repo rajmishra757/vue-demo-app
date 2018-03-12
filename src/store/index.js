@@ -17,6 +17,7 @@ const store = new Vuex.Store({
       isLoggedIn: !!localStorage.getItem("token"),
       currentUsername: '',
       isLoginFailed: false,
+      pending: false,
   },
   mutations: {
     [LOGIN] (state) {
@@ -75,6 +76,9 @@ const store = new Vuex.Store({
      },
     isLoginFailed: state => {
       return state.isLoginFailed;
+     },
+    pending: state => {
+      return state.pending;
      }
   },
   plugins: process.env.NODE_ENV !== 'production'
