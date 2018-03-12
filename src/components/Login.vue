@@ -34,7 +34,7 @@
                 </div>
                 <div class='form-group'>        
                   <div class='col-sm-offset-2 col-sm-10'>
-                    <button type='submit' class='btn btn-info pull-right'>Login</button>
+                    <button type='submit' class='btn btn-primary pull-right'>Login</button>
                   </div>
                 </div>
               </form>
@@ -101,11 +101,11 @@ export default {
   margin-bottom: 45px;
 }
 .bg-left {
-  background-color: #1abc9c; /* Green */
+  background-color: #1a2935; /* Green */
   color: #ffffff;
 }
 .bg-right {
-  background-color: #474e5d; /* Dark Blue */
+  background-color: #32343cfa; /* Dark Blue */
   color: #ffffff;
 }
 #login img {

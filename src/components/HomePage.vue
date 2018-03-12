@@ -1,5 +1,6 @@
 <template>
-  <div id='home-page' data-spy='scroll' data-target='.navbar' data-offset='60'>
+<div id='home-page-parent'>
+  <div v-if='isLoggedIn' id='home-page' data-spy='scroll' data-target='.navbar' data-offset='60'>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -8,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="#home-page">Logo</a>
+          <a class="navbar-brand" href="#home-page">HOME</a>
         </div>
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right">
@@ -99,6 +100,15 @@
     </div>
     <footer-section/>
   </div>
+  <div v-else class='jumbotron text-center'>
+    <h1>Unauthorized</h1>
+    <h2>
+      <router-link to="/" v-if="!isLoggedIn">
+        <button class='btn btn-primary'>Login</button>
+      </router-link>
+    </h2>
+  </div>
+</div>
 </template>
 
 <script>
