@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id='main-page' class='container-fluid'>
+    <div id='login' class='container-fluid'>
       <spinner v-if='$store.getters.pending'/>
       <div class='row content' v-if='!$store.getters.pending'>
           <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12
@@ -52,7 +52,7 @@ import FooterSection from './FooterSection';
 import Spinner from './Spinner';
 
 export default {
-  name: "MainPage",
+  name: 'Login',
   data: function() {
     return {
       username: '',
@@ -108,7 +108,7 @@ export default {
   background-color: #474e5d; /* Dark Blue */
   color: #ffffff;
 }
-#main-page img {
+#login img {
   margin: auto;
   display: inline;
 }
@@ -118,7 +118,7 @@ export default {
   padding-left: 50px;
   padding-right: 50px;
 }
-#main-page form {
+#login form {
   padding-top: 30px;
 }
 </style>
