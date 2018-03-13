@@ -17,7 +17,7 @@
               <alert :alertStyleClass='alertStyleClass' v-if='$store.getters.isLoginFailed'>
                 Invalid credentials
               </alert>
-              <form class='form-horizontal' @submit.prevent='login({ username, password })'>
+              <form class='form-horizontal' @submit.prevent='login()'>
                 <div class='form-group'>
                   <label class='control-label col-sm-2' for='username'>Username:</label>
                   <div class='col-sm-10'>
