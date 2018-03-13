@@ -14,6 +14,7 @@ export default new Router({
     },
     {
       path: '/home',
+      alias: ['/home-page', '/about', '/values', '/services'],
       name: 'HomePage',
       component: HomePage
     }
