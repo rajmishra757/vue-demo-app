@@ -1,6 +1,6 @@
 <template>
-  <div id="loading">
-    <ul class="bokeh">
+  <div id='spinner'>
+    <ul class='loader-balls'>
       <li></li>
       <li></li>
       <li></li>
@@ -15,8 +15,8 @@ export default {
 </script>
 
 <style scoped>
-#loading {
-  background-color: #f4f4f2;
+#spinner {
+  background-color: #08112b;
   height: 100%;
   left: 0;
   margin: auto;
@@ -24,7 +24,7 @@ export default {
   top: 0;
   width: 100%;
 }
-.bokeh {
+.loader-balls {
   border: 0.01em solid rgba(150, 150, 150, 0.1);
   border-radius: 50%;
   font-size: 100px;
@@ -36,21 +36,21 @@ export default {
   width: 1em;
   z-index: 2147483647;
 }
-.bokeh li {
+.loader-balls li {
   border-radius: 50%;
   height: 0.2em;
   position: absolute;
   width: 0.2em;
 }
-.bokeh li:nth-child(1) {
+.loader-balls li:nth-child(1) {
   animation: 1.13s linear 0s normal none infinite running rota, 3.67s ease-in-out 0s alternate none infinite running opa;
-  background: #00c176 none repeat scroll 0 0;
+  background: #02f786 none repeat scroll 0 0;
   left: 50%;
   margin: 0 0 0 -0.1em;
   top: 0;
   transform-origin: 50% 250% 0;
 }
-.bokeh li:nth-child(2) {
+.loader-balls li:nth-child(2) {
   animation: 1.86s linear 0s normal none infinite running rota, 4.29s ease-in-out 0s alternate none infinite running opa;
   background: #ff003c none repeat scroll 0 0;
   margin: -0.1em 0 0;
@@ -58,20 +58,13 @@ export default {
   top: 50%;
   transform-origin: -150% 50% 0;
 }
-.bokeh li:nth-child(3) {
+.loader-balls li:nth-child(3) {
   animation: 1.45s linear 0s normal none infinite running rota, 5.12s ease-in-out 0s alternate none infinite running opa;
-  background: #fabe28 none repeat scroll 0 0;
+  background: #ffb807 none repeat scroll 0 0;
   bottom: 0;
   left: 50%;
   margin: 0 0 0 -0.1em;
   transform-origin: 50% -150% 0;
-}
-.bokeh li:nth-child(4) {
-  animation: 1.72s linear 0s normal none infinite running rota, 5.25s ease-in-out 0s alternate none infinite running opa;
-  background: #88c100 none repeat scroll 0 0;
-  margin: -0.1em 0 0;
-  top: 50%;
-  transform-origin: 250% 50% 0;
 }
 @keyframes opa {
   12% {
