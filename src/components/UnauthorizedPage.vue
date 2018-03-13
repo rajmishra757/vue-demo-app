@@ -2,7 +2,7 @@
   <div id='unauthorized-page' class='jumbotron text-center'>
     <h1>Unauthorized</h1>
     <h2>
-      <router-link to="/" v-if="!isLoggedIn">
+      <router-link to='/' v-if='!isLoggedIn'>
         <button class='btn btn-primary'>Login</button>
       </router-link>
     </h2>
