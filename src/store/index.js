@@ -1,20 +1,17 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { stat } from 'fs';
-//import * as getters from './getters';
-//import * as actions from './actions';
-//import * as mutations from './mutators';
 
 Vue.use(Vuex);
 
-const LOGIN = "LOGIN";
-const LOGIN_SUCCESS = "LOGIN_SUCCESS";
-const LOGIN_FAILURE = "LOGIN_FAILURE";
-const LOGOUT = "LOGOUT";
+const LOGIN = 'LOGIN';
+const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+const LOGIN_FAILURE = 'LOGIN_FAILURE';
+const LOGOUT = 'LOGOUT';
 
 const store = new Vuex.Store({
   state: {
-      isLoggedIn: !!localStorage.getItem("token"),
+      isLoggedIn: !!localStorage.getItem('token'),
       currentUsername: '',
       isLoginFailed: false,
       pending: false,
@@ -43,12 +40,11 @@ const store = new Vuex.Store({
   actions: {
     login({ commit }, creds) {
       commit(LOGIN); // show spinner
-      console.log(JSON.stringify(creds));
       if(creds.username === 'admin' && creds.password === 'admin') {
         return new Promise(resolve => {
           setTimeout(() => {
             const uuidv4 = require('uuid/v4');
-            localStorage.setItem("token", uuidv4());
+            localStorage.setItem('token', uuidv4());
             commit(LOGIN_SUCCESS, creds.username);
             resolve();
           }, 1000);
@@ -63,7 +59,7 @@ const store = new Vuex.Store({
       }
     },
     logout({ commit }) {
-      localStorage.removeItem("token");
+      localStorage.removeItem('token');
       commit(LOGOUT);
     }
   },
@@ -81,10 +77,6 @@ const store = new Vuex.Store({
       return state.pending;
      }
   },
-  plugins: process.env.NODE_ENV !== 'production'
-  //    ? [createLogger()]
-    ? []
-    : [],
 });
 
 export default store;

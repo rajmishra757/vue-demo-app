@@ -71,7 +71,6 @@ export default {
         username: this.username,
         password: this.password
       }).then(() => {
-        console.log('then');
         if(this.$store.getters.isLoggedIn) {
           this.$router.push('/home');
         }
@@ -93,7 +92,7 @@ export default {
   display: -ms-flexbox;
   display: flex;
 }
-.row > [class*="col-"] {
+.row > [class*='col-'] {
   display: flex;
   flex-direction: column;
 }
